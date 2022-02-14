@@ -5,6 +5,27 @@
 
 <svelte:head>
     <title>Puroto Blog - Home</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://blog.puroto.net/" />
+    <meta property="og:title" content="Puroto Blog - Home" />
+    <meta
+        property="og:description"
+        content="The official blog of Puroto. Follow for deep insights into the community platform."
+    />
+    <meta property="og:image" content="https://raw.githubusercontent.com/PurotoApp/Blog/main/static/preview.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Puroto Blog - Home" />
+    <meta property="twitter:site" content="blog.puroto.net" />
+    <meta
+        property="twitter:image"
+        content="https://raw.githubusercontent.com/PurotoApp/Blog/main/static/preview.png"
+    />
+    <meta
+        property="twitter:description"
+        content="The official blog of Puroto. Follow for deep insights into the community platform."
+    />
 </svelte:head>
 
 <!--    Title   -->
