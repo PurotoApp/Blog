@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	@apply overflow-y-scroll bg-background text-white;
+	@layer min-w-64;
+}
+
+::-webkit-scrollbar {
+	width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #DBBE76;
+	border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+	.md-hidden {
+		display: none;
+	}
+}
