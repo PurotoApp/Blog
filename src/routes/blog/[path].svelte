@@ -35,7 +35,7 @@
 			navigator.share({
 				title: blog.title,
 				text: blog.content,
-				url: `https://blog.puroto.net/${blog.link}`
+				url: `https://blog.puroto.net/blog/${blog.link}`
 			})
 		}else{
 			showShareMenu = !showShareMenu;
@@ -97,9 +97,9 @@
 					</div>
 					{#if showShareMenu}
 					<div class="absolute flex justify-between bg-gray-4 rounded-lg p-1 right-0 translate-y-2">
-						<div><a href="https://twitter.com/intent/tweet?url=https://blog.puroto.net/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/twitter.png" alt="Share on Twitter" /></a></div>
-						<div class="mx-4"><a href="https://www.facebook.com/sharer.php?u=https://blog.puroto.net/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/facebook.png" alt="Share on Facebook" /></a></div>
-						<div><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.puroto.net/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/linkedin.png" alt="Share on LinkedIn" /></a></div>
+						<div><a href="https://twitter.com/intent/tweet?url=https://blog.puroto.net/blog/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/twitter.png" alt="Share on Twitter" /></a></div>
+						<div class="mx-4"><a href="https://www.facebook.com/sharer.php?u=https://blog.puroto.net/blog/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/facebook.png" alt="Share on Facebook" /></a></div>
+						<div><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.puroto.net/blog/{blog.link}" target="blank" rel="noopener noreferrer"><img class="h-8 w-8" src="/icons/linkedin.png" alt="Share on LinkedIn" /></a></div>
 					</div>
 					{/if}
 				</div>
