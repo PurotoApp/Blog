@@ -85,7 +85,7 @@
 				{#if blog.authorAvatar == null}
 				<div class="h-16 w-16 bg-gold-5 rounded-lg"/>
 				{:else}
-				<div class="h-16 w-16 bg-gold-5 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url({blog.authorAvatar})"/>
+				<div class="h-16 w-16 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url({blog.authorAvatar})"/>
 				{/if}
 			</div>
 			<span class="text-center font-semibold text-lg select-none">{blog.author}</span>
@@ -169,7 +169,7 @@
 				{#if blog.authorAvatar == null}
 				<div class="h-16 w-16 bg-gold-5 rounded-lg"/>
 				{:else}
-				<div class="h-16 w-16 bg-gold-5 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url({blog.authorAvatar})"/>
+				<div class="h-16 w-16 rounded-lg bg-cover bg-no-repeat bg-center" style="background-image: url({blog.authorAvatar})"/>
 				{/if}
 			</div>
 			<span class="float-left font-semibold text-lg select-none">{blog.author}</span>

@@ -14,7 +14,7 @@
     <div class="bg-gray-4 rounded-lg w-full h-64">
         <div class="rounded-t-lg w-full h-40 overflow-hidden">
             {#if blog.image}
-                <div class="rounded-t-lg w-full bg-cover bg-no-repeat bg-center h-40 transition bg-gold-5 group-hover:scale-125" style="background-image: url({blog.image})"/>
+                <div class="rounded-t-lg w-full bg-cover bg-no-repeat bg-center h-40 transition group-hover:scale-110" style="background-image: url({blog.image})"/>
             {:else}
                 <div class="rounded-t-lg w-full h-40 bg-gold-5"/>
             {/if}
