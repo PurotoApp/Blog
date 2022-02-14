@@ -6,12 +6,10 @@ export function compareDates(date: number) {
 	const difference_hours = Math.floor(difference_ms / (1000 * 3600));
 	const difference_minutes = Math.floor(difference_ms / (1000 * 60));
 	if (difference_days >= 7) {
-
 		// returns DD/MM/YYYY
 		return `${new Date(date).getDate()} ${new Date(date).toLocaleString('default', {
 			month: 'short'
 		})} ${new Date(date).getFullYear()}`;
-
 	} else if (difference_days > 0) {
 		return `${difference_days}d ago`;
 	} else if (difference_hours > 0) {

@@ -78,12 +78,10 @@ module.exports = {
 					'--tw-prose-pre-code': 'var(--tw-prose-invert-pre-code)',
 					'--tw-prose-pre-bg': 'var(--tw-prose-invert-pre-bg)',
 					'--tw-prose-th-borders': 'var(--tw-prose-invert-th-borders)',
-					'--tw-prose-td-borders': 'var(--tw-prose-invert-td-borders)',
-				},
-			},
+					'--tw-prose-td-borders': 'var(--tw-prose-invert-td-borders)'
+				}
+			}
 		}
 	},
-	plugins: [
-		require('@tailwindcss/typography')
-	]
-}
+	plugins: [require('@tailwindcss/typography')]
+};
