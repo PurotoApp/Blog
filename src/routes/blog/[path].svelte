@@ -53,14 +53,14 @@
         property="og:description"
         content="{blog.description}"
     />
-    <meta property="og:image" content="https://blogapi.puroto.net/images/{blog.link}" />
+    <meta property="og:image" content="https://blogapi.puroto.net/image/{blog.link}" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Puroto Blog - {blog.title}" />
     <meta property="twitter:site" content="blog.puroto.net/blog/{blog.link}" />
     <meta
         property="twitter:image"
-        content="https://blogapi.puroto.net/images/{blog.link}"
+        content="https://blogapi.puroto.net/image/{blog.link}"
     />
     <meta
         property="twitter:description"
