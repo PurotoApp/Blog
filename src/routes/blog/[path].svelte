@@ -62,11 +62,11 @@
 <div class="absolute left-1/2 mt-32 w-11/12 -translate-x-1/2 md:w-8/12">
 	{#if blog.image}
 		<div
-			class="h-40 w-full rounded-lg bg-cover bg-center bg-no-repeat"
-			style=";background-image: url({blog.image})"
+			class="h-40 w-full rounded-lg bg-cover bg-center bg-no-repeat md:h-80"
+			style="background-image: url({blog.image})"
 		/>
 	{:else}
-		<div class="rounded-lg w-full bg-cover bg-no-repeat bg-center bg-gold-5 h-40" />
+		<div class="rounded-lg w-full bg-cover bg-no-repeat bg-center bg-gold-5 h-40 md:h-80" />
 	{/if}
 	<div class="my-4">
 		<span class="text-4xl font-semibold">{blog.title}</span>
