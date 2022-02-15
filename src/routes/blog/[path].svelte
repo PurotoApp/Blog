@@ -34,7 +34,7 @@
 		if (navigator.share) {
 			navigator.share({
 				title: blog.title,
-				text: blog.content,
+				text: blog.title,
 				url: `https://blog.puroto.net/blog/${blog.link}`
 			});
 		} else {
