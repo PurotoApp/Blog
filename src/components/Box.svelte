@@ -29,7 +29,7 @@
 			<span class="max-w-10/12 inline-block h-8 overflow-hidden text-ellipsis break-all text-xl"
 				>{blog.title}</span
 			>
-			<span class="float-right inline h-8 w-max overflow-hidden text-sm text-gray-10"
+			<span class="float-right inline h-8 w-max select-none overflow-hidden text-sm text-gray-10"
 				>• {blog.date}</span
 			>
 			<span class="block h-12 overflow-hidden text-ellipsis break-all text-sm text-gray-10"
