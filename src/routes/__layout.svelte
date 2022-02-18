@@ -14,6 +14,10 @@
 			<Icon size="6rem" stroke="#DBBE76" />
 		</div>
 	</div>
+
+	<div class="hidden">
+		<slot />
+	</div>
 {/if}
 
 <Header />
