@@ -1,7 +1,9 @@
 <script context="module">
 	export async function load({ params }) {
 		let path = params.path;
-		const res = await fetch(`https://blogapi.puroto.net/blog/${path}`);
+		let lang = params.lang;
+		if(lang == null) lang = "en";
+		const res = await fetch(`https://blogapi.puroto.net/blog/${path}/${lang}`);
 		const data = await res.json();
 		return { props: { data } };
 	}
@@ -11,7 +13,6 @@
 	import { marked } from 'marked';
 	export let data;
 	import { compareDates } from '$lib/compareDates';
-
 	let blog = data.data;
 	switch (blog.author.toLowerCase()) {
 		case 'alex':
@@ -35,7 +36,7 @@
 			navigator.share({
 				title: blog.title,
 				text: blog.title,
-				url: `https://blog.puroto.net/blog/${blog.link}`
+				url: `https://blog.puroto.net/blog/${blog.link}-${data.lang}`
 			});
 		} else {
 			showShareMenu = !showShareMenu;
@@ -47,14 +48,14 @@
 	<title>Puroto Blog - {blog.title}</title>
 
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://blog.puroto.net/blog/{blog.link}" />
+	<meta property="og:url" content="https://blog.puroto.net/blog/{blog.link}-{data.lang}" />
 	<meta property="og:title" content="Puroto Blog - {blog.title}" />
 	<meta property="og:description" content={blog.description} />
 	<meta property="og:image" content={blog.image} />
 
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:title" content="Puroto Blog - {blog.title}" />
-	<meta property="twitter:site" content="blog.puroto.net/blog/{blog.link}" />
+	<meta property="twitter:site" content="blog.puroto.net/blog/{blog.link}-{data.lang}" />
 	<meta property="twitter:image" content={blog.image} />
 	<meta property="twitter:description" content={blog.description} />
 </svelte:head>

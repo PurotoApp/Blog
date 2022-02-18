@@ -11,7 +11,7 @@
 </script>
 
 <a
-	href="/blog/{blog.link}"
+	href="/blog/{blog.link}/en"
 	class="group mx-auto mb-6 grid cursor-pointer rounded-lg p-1 transition hover:bg-gray-1 sm:max-w-full lg:w-1/3"
 >
 	<div class="h-64 w-full rounded-lg bg-gray-4">
