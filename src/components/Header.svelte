@@ -1,5 +1,28 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
+	import { Lang } from '$lib/setLang';
+
+	let languagesList = [
+		{ lang: 'en', text: 'English' },
+		{ lang: 'de', text: 'Deutsch' },
+		{ lang: 'nl', text: 'Nederlands' },
+		{ lang: 'es', text: 'Español' },
+		{ lang: 'fr', text: 'Français' },
+		{ lang: 'pl', text: 'Polski' }
+	];
+
+	let showLangMenu = false;
+	function toggleLangMenu() {
+		showLangMenu = !showLangMenu;
+	}
+
+	function setLang(lang) {
+		console.log(window.location.href)
+		if(window.location.href.startsWith('https://blog.puroto.net/blog/')) {
+			window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1) + lang + '/';
+		}
+		Lang.set(lang)
+	}
 </script>
 
 <header class="fixed left-1/2 top-0 z-50 mt-6 h-8 w-10/12 -translate-x-1/2  select-none">
@@ -33,7 +56,7 @@
 					</div>
 				</a>
 				<a
-					class="ml-1 transition hover:text-[#6D6BED]"
+					class="mx-1 transition hover:text-[#6D6BED]"
 					href="https://puroto.net/"
 					target="_blank"
 					aria-label="puroto.net"
@@ -55,6 +78,28 @@
 						</svg>
 					</div>
 				</a>
+				<div class="ml-1">
+					<div on:click={toggleLangMenu} class="cursor-pointer translate-y-1 transition hover:text-mint">
+						<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+						</svg>
+					</div>
+					{#if showLangMenu}
+					<div class="absolute bg-gray-3 px-1 rounded-lg py-1 translate-y-2 -translate-x-1/2 md:-translate-x-10">
+						{#each languagesList as lang}
+						{#if lang.lang == $Lang}
+						<span class="block text-center my-1 font-extrabold transition hover:bg-gray-4 px-2 py-1 rounded-lg">
+							{lang.text}
+						</span>
+						{:else}
+						<span on:click={()=>setLang(`${lang.lang}`)} class="block text-center my-1 cursor-pointer hover:font-bold transition hover:bg-gray-4 px-2 py-1 rounded-lg">
+							{lang.text}
+						</span>
+						{/if}
+						{/each}
+					</div>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>

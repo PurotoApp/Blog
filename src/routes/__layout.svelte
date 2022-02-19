@@ -18,10 +18,11 @@
 	<div class="hidden">
 		<slot />
 	</div>
-{/if}
-
-<Header />
+{:else}	
+	<Header />
 
 <main class="h-full w-full">
 	<slot />
 </main>
+
+{/if}

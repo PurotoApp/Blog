@@ -13,7 +13,7 @@
 	import { marked } from 'marked';
 	export let data;
 	export let lang;
-	console.log(lang)
+
 	import { compareDates } from '$lib/compareDates';
 	let blog = data.data;
 	switch (blog.author.toLowerCase()) {

@@ -55,6 +55,8 @@ module.exports = {
 					7: '#C9C9F8'
 				},
 
+				mint: '#93DBB1',
+
 				red: {
 					1: '#E24848',
 					2: '#F14646'

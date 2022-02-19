@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { blogList } from '$lib/blogList';
 	import Box from '../components/Box.svelte';
+	import { Lang } from '$lib/setLang';
 </script>
 
 <svelte:head>
@@ -41,7 +42,7 @@
 <!--    Blog list    -->
 <div class="relative mx-auto w-11/12">
 	{#each $blogList as blog}
-		<Box {blog} />
+		<Box lang={$Lang} {blog} />
 	{:else}
 		<div class="flex justify-center mt-40">
 			<h2 class="text-lg block text-center mt-4 text-gray-10">We couldn't find any blog 😫</h2>

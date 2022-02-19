@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { compareDates } from '$lib/compareDates';
 
+	export let lang = 'en';
+
 	export let blog = {
 		link: 'null',
 		title: 'Title',
@@ -11,7 +13,7 @@
 </script>
 
 <a
-	href="/blog/{blog.link}/en"
+	href="/blog/{blog.link}/{lang}"
 	class="group mx-auto mb-6 grid cursor-pointer rounded-lg p-1 transition hover:bg-gray-1 sm:max-w-full lg:w-1/3"
 >
 	<div class="h-64 w-full rounded-lg bg-gray-4">
