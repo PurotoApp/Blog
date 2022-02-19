@@ -5,9 +5,9 @@
 	let languagesList = [
 		{ lang: 'en', text: 'English' },
 		{ lang: 'de', text: 'Deutsch' },
+		{ lang: 'fr', text: 'Français' },
 		{ lang: 'nl', text: 'Nederlands' },
 		{ lang: 'es', text: 'Español' },
-		{ lang: 'fr', text: 'Français' },
 		{ lang: 'pl', text: 'Polski' }
 	];
 
