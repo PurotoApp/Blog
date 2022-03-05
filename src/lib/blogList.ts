@@ -7,8 +7,7 @@ export const blogList = writable([]);
 const lang = get(Lang);
 
 const getList = async () => {
-	const res = await fetch(`https://blogapi.puroto.net/list?lang=${lang}`, {
-	});
+	const res = await fetch(`https://blogapi.puroto.net/list?lang=${lang}`);
 	if (res.status == 502) return blogList.set([]);
 	const json = await res.json();
 	json.forEach((blog) => {
