@@ -17,11 +17,13 @@
 	}
 
 	function setLang(lang) {
+		Lang.set(lang);
 		if (window.location.href.startsWith('https://blog.puroto.net/blog/')) {
 			window.location.href =
 				window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1) + lang + '/';
+		} else {
+			location.reload();
 		}
-		Lang.set(lang);
 	}
 </script>
 
