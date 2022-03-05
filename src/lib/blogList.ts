@@ -4,7 +4,14 @@ import { compareDates } from '$lib/compareDates';
 export const blogList = writable([]);
 
 const getList = async () => {
-	const res = await fetch('https://blogapi.puroto.net/list');
+	const res = await fetch('https://blogapi.puroto.net/list', {
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			lang: localStorage.getItem('Lang')
+		})
+	});
 	if (res.status == 502) return blogList.set([]);
 	const json = await res.json();
 	json.forEach((blog) => {
