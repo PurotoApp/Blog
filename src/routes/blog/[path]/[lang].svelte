@@ -3,7 +3,7 @@
 		let path = params.path;
 		let lang = params.lang;
 		if (lang == null) lang = 'en';
-		const res = await fetch(`https://blogapi.puroto.net/blog/${path}/${lang}`);
+		const res = await fetch(`https://blogapi.puroto.net/blog/${path}?lang=${lang}`);
 		const data = await res.json();
 		return { props: { data, lang } };
 	}
