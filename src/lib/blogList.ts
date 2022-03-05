@@ -1,16 +1,13 @@
-import { writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
 import { compareDates } from '$lib/compareDates';
+import { Lang } from '$lib/setLang';
 
 export const blogList = writable([]);
 
+const lang = get(Lang);
+
 const getList = async () => {
-	const res = await fetch('https://blogapi.puroto.net/list', {
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			lang: localStorage.getItem('Lang')
-		})
+	const res = await fetch(`https://blogapi.puroto.net/list?lang=${lang}`, {
 	});
 	if (res.status == 502) return blogList.set([]);
 	const json = await res.json();
