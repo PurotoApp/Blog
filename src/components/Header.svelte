@@ -36,15 +36,15 @@
 			</a>
 		</div>
 		<div class="rounded-lg bg-background">
-			<div class="flex">
+			<div class="flex align-middle">
 				<a
-					class="mr-1"
+					class="mr-1 pr-1 transition hover:text-[#1DA1F2]"
 					href="https://twitter.com/PurotoApp"
 					target="_blank"
 					aria-label="twitter"
 					alt="twitter"
 				>
-					<div class="translate-y-1 transition hover:text-[#1DA1F2]">
+					<div class="translate-y-1">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="currentColor"
@@ -58,7 +58,7 @@
 					</div>
 				</a>
 				<a
-					class="mx-1 transition hover:text-[#6D6BED]"
+					class="mx-1 px-1 transition hover:text-[#6D6BED]"
 					href="https://puroto.net/"
 					target="_blank"
 					aria-label="puroto.net"
@@ -80,7 +80,7 @@
 						</svg>
 					</div>
 				</a>
-				<div class="ml-1">
+				<div class="ml-1 pl-1">
 					<div
 						on:click={toggleLangMenu}
 						class="translate-y-1 cursor-pointer transition hover:text-mint"
