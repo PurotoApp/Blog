@@ -8,8 +8,10 @@
 		title: 'Title',
 		description: 'Description',
 		image: null,
-		date: compareDates(new Date().getTime())
+		date: 0
 	};
+
+	let date = compareDates(blog.date);
 </script>
 
 <a
@@ -32,7 +34,7 @@
 				>{blog.title}</span
 			>
 			<span class="float-right inline h-8 w-max select-none overflow-hidden text-sm text-gray-10"
-				>• {blog.date}</span
+				>• {date}</span
 			>
 			<span class="block h-12 overflow-hidden text-ellipsis break-all text-sm text-gray-10"
 				>{blog.description}</span

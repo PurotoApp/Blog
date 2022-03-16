@@ -1,7 +1,25 @@
+<script context="module">
+	import { get } from 'svelte/store';
+	let lang = get(Lang);
+	let Language = lang;
+	if (lang == null) Language = 'en';
+
+	export async function load() {
+		const res = await fetch(`https://blogapi.puroto.net/list?lang=${Language}`);
+		const data = await res.json();
+		return {
+			props: {
+				data: data
+			}
+		};
+	}
+</script>
+
 <script lang="ts">
-	import { blogList } from '$lib/blogList';
 	import Box from '../components/Box.svelte';
 	import { Lang } from '$lib/setLang';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -41,8 +59,8 @@
 </div>
 <!--    Blog list    -->
 <div class="relative mx-auto w-11/12">
-	{#each $blogList as blog}
-		<Box lang={$Lang} {blog} />
+	{#each data as blog}
+		<Box lang={Language} {blog} />
 	{:else}
 		<div class="flex justify-center mt-40">
 			<h2 class="text-lg block text-center mt-4 text-gray-10">We couldn't find any blog 😫</h2>
