@@ -286,6 +286,11 @@
 		</div>
 
 		<div class="prose prose-invert prose-img:rounded-md md:hidden">
+			{#if !isLangAvailable}
+				<p class="my-6 mb-12 text-center text-3xl font-bold text-red-2">
+					Lang not found, showing original instead.
+				</p>
+			{/if}
 			{@html marked(blog.content)}
 		</div>
 
