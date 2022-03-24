@@ -14,7 +14,11 @@
 	export let data;
 	export let lang;
 
+	let isLangAvailable = true;
+	if(data.isRequestedLangNull) isLangAvailable = false;
+
 	import { compareDates } from '$lib/compareDates';
+
 	let blog = data.data;
 	switch (blog.author.toLowerCase()) {
 		case 'alex':
@@ -92,6 +96,9 @@
 		</div>
 
 		<div class="md-hidden prose prose-invert prose-img:rounded-md">
+			{#if !isLangAvailable}
+			<p class="text-red-2 font-bold text-3xl text-center my-6 mb-12">Lang not found, showing original instead.</p>
+			{/if}
 			{@html marked(blog.content)}
 		</div>
 
