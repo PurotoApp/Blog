@@ -11,13 +11,13 @@
 
 <script lang="ts">
 	import { marked } from 'marked';
+	import { compareDates } from '$lib/compareDates';
+	import LangWarning from '../../../components/LangWarning.svelte';
 	export let data;
 	export let lang;
 
-	let isLangAvailable = true;
-	if (data.isRequestedLangNull) isLangAvailable = false;
-
-	import { compareDates } from '$lib/compareDates';
+	let langWarning = false;
+	if (data.langWarning) langWarning = true;
 
 	let blog = data.data;
 	switch (blog.author.toLowerCase()) {
@@ -76,7 +76,12 @@
 		<div class="rounded-lg w-full bg-cover bg-no-repeat bg-center bg-gold-5 h-40 md:h-80" />
 	{/if}
 	<div class="my-4">
-		<span class="text-4xl font-semibold">{blog.title}</span>
+		<div class="flex">
+			{#if langWarning}
+				<LangWarning />
+			{/if}
+			<span class="text-4xl font-semibold">{blog.title}</span>
+		</div>
 	</div>
 	<hr class="mb-8 border-gray-4" />
 	<div class="my-8 flex flex-col md:grid md:grid-cols-[20%_60%_20%]">
@@ -96,11 +101,6 @@
 		</div>
 
 		<div class="md-hidden prose prose-invert prose-img:rounded-md">
-			{#if !isLangAvailable}
-				<p class="my-6 mb-12 text-center text-3xl font-bold text-red-2">
-					Lang not found, showing original instead.
-				</p>
-			{/if}
 			{@html marked(blog.content)}
 		</div>
 
@@ -286,11 +286,6 @@
 		</div>
 
 		<div class="prose prose-invert prose-img:rounded-md md:hidden">
-			{#if !isLangAvailable}
-				<p class="my-6 mb-12 text-center text-3xl font-bold text-red-2">
-					Lang not found, showing original instead.
-				</p>
-			{/if}
 			{@html marked(blog.content)}
 		</div>
 
