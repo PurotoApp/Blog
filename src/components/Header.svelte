@@ -115,7 +115,7 @@
 								{:else}
 									<span
 										on:click={() => setLang(`${lang.lang}`)}
-										class="block text-center my-1 cursor-pointer hover:font-bold transition hover:bg-gray-4 px-2 py-1 rounded-lg"
+										class="my-1 block cursor-pointer rounded-lg px-2 py-1 text-center transition hover:bg-gray-4 hover:font-bold"
 									>
 										{lang.text}
 									</span>

@@ -26,7 +26,7 @@
 					style="background-image: url({blog.image})"
 				/>
 			{:else}
-				<div class="rounded-t-lg w-full h-40 bg-gold-5" />
+				<div class="h-40 w-full rounded-t-lg bg-gold-5" />
 			{/if}
 		</div>
 		<div class="mx-2 my-1">
