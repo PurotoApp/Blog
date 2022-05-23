@@ -5,6 +5,7 @@
 		if (lang == null) lang = 'en';
 		const res = await fetch(`https://blogapi.puroto.net/blog/${path}?lang=${lang}`);
 		const data = await res.json();
+		if (res.status == 404) return { redirect: '/', status: 302 };
 		return { props: { data, lang } };
 	}
 </script>
