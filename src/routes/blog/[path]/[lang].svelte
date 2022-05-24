@@ -5,6 +5,7 @@
 		if (lang == null) lang = 'en';
 		const res = await fetch(`https://blogapi.puroto.net/blog/${path}?lang=${lang}`);
 		const data = await res.json();
+		if (res.status == 404) return { redirect: '/', status: 302 };
 		return { props: { data, lang } };
 	}
 </script>
@@ -37,6 +38,7 @@
 	blog.timeRead = `${Math.ceil(blog.content.split(' ').length / 250)} min read`;
 
 	let showShareMenu = false;
+
 	function share() {
 		if (navigator.share) {
 			navigator.share({
@@ -73,7 +75,7 @@
 			style="background-image: url({blog.image})"
 		/>
 	{:else}
-		<div class="rounded-lg w-full bg-cover bg-no-repeat bg-center bg-gold-5 h-40 md:h-80" />
+		<div class="h-40 w-full rounded-lg bg-gold-5 bg-cover bg-center bg-no-repeat md:h-80" />
 	{/if}
 	<div class="my-4">
 		<div class="flex">
@@ -92,7 +94,7 @@
 					<div class="h-16 w-16 rounded-lg bg-gold-5" />
 				{:else}
 					<div
-						class="h-16 w-16 rounded-lg bg-cover bg-no-repeat bg-center"
+						class="h-16 w-16 rounded-lg bg-cover bg-center bg-no-repeat"
 						style="background-image: url({blog.authorAvatar})"
 					/>
 				{/if}
@@ -297,7 +299,7 @@
 					<div class="h-16 w-16 rounded-lg bg-gold-5" />
 				{:else}
 					<div
-						class="h-16 w-16 rounded-lg bg-cover bg-no-repeat bg-center"
+						class="h-16 w-16 rounded-lg bg-cover bg-center bg-no-repeat"
 						style="background-image: url({blog.authorAvatar})"
 					/>
 				{/if}
